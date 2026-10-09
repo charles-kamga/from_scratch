@@ -1,24 +1,11 @@
-classe = [
-    {"etudiant": "Sam", "note": 14},
-    {"etudiant": "Léa", "note": 18},
-    {"etudiant": "Tom", "note": 9},
-    {"etudiant": "Chloé", "note": 16},
-]
-
-def calculer_statistiques(liste_etudiants):
-    somme_notes = 0
-    for n in liste_etudiants:
-        somme_notes += n["note"]
-    moyenne = somme_notes / len(liste_etudiants)
-    admis =[]
-    for etu in liste_etudiants:
-        if etu["note"] >= 10:
-            admis.append(etu["etudiant"])
-
-    return {
-        "moyenne" : moyenne,
-        "admis" : admis
-        }
+panier = [19.99, "gratuit", 5.50, 42, None, 10.0]
 
 
-print(calculer_statistiques(classe))
+def calculer_total(prix_articles):
+    somme = 0
+    for n in prix_articles:
+        if isinstance(n, (int, float)):
+            somme += n
+    return somme
+
+print(calculer_total(panier))
