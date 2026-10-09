@@ -1,8 +1,12 @@
-try:
-    with open("fichier_fantome.txt", "r") as f:
-        contenu = f.read()
-        print(contenu)
-except :
-    print("Le fichier n'existe pas encore, pas de panique !")
+def lire_fichier_securise(chemin_fichier):
+    try:
+        with open(chemin_fichier, "r") as fichier:
+            contenu = fichier.read()
+            print(contenu)
+        return contenu
+    except FileNotFoundError:
+        print("Dsl, fichier introuvable")
+        return "Erreur : fichier introuvable"
 
-print("Le reste du programme continue à tourner tranquillement !")
+message = lire_fichier_securise("inconu.text")
+print(message)
