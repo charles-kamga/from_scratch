@@ -1,0 +1,9 @@
+{
+    "joueur": "Alex",
+    "points_de_vie": 85,
+    "niveau": 3,
+    "objets": [
+        "potion",
+        "bouclier"
+    ]
+}
